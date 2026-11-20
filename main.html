@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Secure Notebook</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #eef2ff);
+        }
+
+        .vault-box {
+            width: 90%;
+            max-width: 750px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .heading {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        #privateText {
+            width: 100%;
+            height: 280px;
+            padding: 15px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        #privateText:focus {
+            border-color: #2563eb;
+        }
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .actions button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #1e40af;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .actions button:hover {
+            background: #172554;
+        }
+
+        .actions .delete-btn {
+            background: #dc2626;
+        }
+
+        .actions .exit-btn {
+            background: #475569;
+        }
+
+        #statusText {
+            margin-top: 20px;
+            font-weight: 600;
+            color: #15803d;
+        }
+
+        @media (max-width: 600px) {
+            .vault-box {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="vault-box">
+
+        <h1 class="heading">My Secure Notebook</h1>
+
+        <p class="description">
+            Keep your personal thoughts and important information safe.
+        </p>
+
+        <textarea
+            id="privateText"
+            placeholder="Start writing your private notes..."
+        ></textarea>
+
+        <div class="actions">
+
+            <button onclick="storeText()">Save</button>
+
+            <button onclick="retrieveText()">Load</button>
+
+            <button class="delete-btn" onclick="removeText()">
+                Delete All
+            </button>
+
+            <button class="exit-btn" onclick="exitVault()">
+                Sign Out
+            </button>
+
+        </div>
+
+        <p id="statusText"></p>
+
+    </main>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
